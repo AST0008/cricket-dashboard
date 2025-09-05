@@ -45,7 +45,7 @@ export function Chatbot({ player }: { player: Player | null }) {
   };
 
   return (
-    <div className="flex flex-col h-[500px] border rounded-lg p-4">
+    <div className="flex flex-col font-alkatra h-[500px] bg-black border rounded-lg p-4">
       <div className="flex-1 overflow-y-auto space-y-4 pr-2">
         <AnimatePresence>
           {messages.map((msg, index) => (
@@ -59,7 +59,7 @@ export function Chatbot({ player }: { player: Player | null }) {
               className={`flex items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}
             >
               {msg.role === 'model' && <Bot className="h-6 w-6 text-primary" />}
-              <div className={`rounded-lg px-4 py-2 ${msg.role === 'user' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
+              <div className={`rounded-lg px-4 py-2 ${msg.role === 'user' ? 'text-primary-foreground' : 'bg-black'}`}>
                 {msg.text}
               </div>
               {msg.role === 'user' && <User className="h-6 w-6 text-muted-foreground" />}
