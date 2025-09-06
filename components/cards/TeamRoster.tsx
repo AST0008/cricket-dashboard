@@ -8,7 +8,7 @@ interface TeamRosterProps {
 }
 
 export const TeamRoster = ({ onPlayerSelect, isDark }: TeamRosterProps) => {
-  // Theme-based colors
+
   const bgColor = isDark ? 'bg-slate-800/50' : 'bg-white/50';
   const borderColor = isDark ? 'border-slate-700/50' : 'border-gray-300/50';
   const headingColor = isDark ? 'text-yellow-400' : 'text-indigo-600';
@@ -24,7 +24,7 @@ export const TeamRoster = ({ onPlayerSelect, isDark }: TeamRosterProps) => {
     <div className={`lg:col-span-4 ${bgColor} backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 border ${borderColor}`}>
       <div className="flex items-center justify-between mb-4 sm:mb-6">
         <h3 className={`text-lg sm:text-xl font-bold ${headingColor}`}>Team Roster</h3>
-        <Search className={`w-4 h-4 sm:w-5 sm:h-5 ${searchIconColor}`} />
+        {/* <Search className={`w-4 h-4 sm:w-5 sm:h-5 ${searchIconColor}`} /> */}
       </div>
       
       <div className="space-y-3 sm:space-y-4 max-h-80 sm:max-h-96 overflow-y-auto">

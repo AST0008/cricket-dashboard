@@ -6,7 +6,7 @@ interface MatchTimelineChartProps {
 }
 
 export const MatchTimelineChart = ({ isDark }: MatchTimelineChartProps) => {
-  // Theme-based colors
+
   const bgColor = isDark ? 'bg-slate-800/50' : 'bg-white/50';
   const borderColor = isDark ? 'border-slate-700/50' : 'border-gray-300/50';
   const headingColor = isDark ? 'text-yellow-400' : 'text-indigo-600';

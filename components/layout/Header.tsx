@@ -54,7 +54,7 @@ export const Header = ({
       
       <div className="flex items-center space-x-4 sm:space-x-6 lg:space-x-8">
         <h1 className="text-lg sm:text-xl lg:text-2xl font-bold">Dashboard</h1>
-        <div className="hidden sm:flex space-x-4 lg:space-x-6">
+        {/* <div className="hidden sm:flex space-x-4 lg:space-x-6">
           <button
             onClick={() => setActiveTab("player")}
             className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg transition-all duration-300 text-sm ${
@@ -75,7 +75,7 @@ export const Header = ({
           >
             Team
           </button>
-        </div>
+        </div> */}
       </div>
 
       <div className="flex items-center space-x-2 sm:space-x-4">
