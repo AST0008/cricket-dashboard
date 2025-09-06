@@ -1,4 +1,3 @@
-// app/components/Chatbot.tsx
 "use client";
 
 import { useState } from 'react';
@@ -50,7 +49,7 @@ export function Chatbot({ player, isDark }: { player: Player | null; isDark: boo
   const modelBubbleBg = isDark ? 'bg-slate-700 text-white' : 'bg-gray-200 text-gray-900';
 
   return (
-    <div className={`flex flex-col h-[500px] rounded-lg p-4 ${chatBg}`}>
+    <div className={`flex flex-col rounded-lg p-4 ${chatBg}`}>
       <div className="flex-1 overflow-y-auto space-y-4 pr-2">
         <AnimatePresence>
           {messages.map((msg, index) => (

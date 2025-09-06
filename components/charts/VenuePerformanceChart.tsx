@@ -6,7 +6,7 @@ interface VenuePerformanceChartProps {
 }
 
 export const VenuePerformanceChart = ({ isDark }: VenuePerformanceChartProps) => {
-  // Theme-based colors
+
   const bgColor = isDark ? 'bg-slate-800/50' : 'bg-white/50';
   const borderColor = isDark ? 'border-slate-700/50' : 'border-gray-300/50';
   const headingColor = isDark ? 'text-yellow-400' : 'text-indigo-600';
@@ -28,16 +28,16 @@ export const VenuePerformanceChart = ({ isDark }: VenuePerformanceChartProps) =>
           <span className="text-xs text-gray-400">Heatmap</span>
         </div>
       </div>
-      
+
       <div className="h-48 sm:h-56 lg:h-64">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={venuePerformanceData} layout="horizontal">
             <CartesianGrid strokeDasharray="3 3" stroke={gridStroke} />
             <XAxis type="number" stroke={axisStroke} tick={{ fontSize: 10, fill: axisStroke }} />
-            <YAxis 
-              dataKey="venue" 
-              type="category" 
-              stroke={axisStroke} 
+            <YAxis
+              dataKey="venue"
+              type="category"
+              stroke={axisStroke}
               tick={{ fontSize: 10, fill: axisStroke }}
               width={80}
             />
@@ -49,8 +49,8 @@ export const VenuePerformanceChart = ({ isDark }: VenuePerformanceChartProps) =>
                 boxShadow: '0 10px 25px rgba(0,0,0,0.3)'
               }}
             />
-            <Bar 
-              dataKey="runs" 
+            <Bar
+              dataKey="runs"
               fill={barFill}
               radius={[0, 4, 4, 0]}
               animationDuration={2000}

@@ -2,7 +2,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { battingFormData } from '@/lib/constants';
 
 export const BattingFormChart = ({ isDark }: { isDark: boolean }) => {
-  // Theme-based colors
+
   const bgColor = isDark ? 'bg-slate-800/50' : 'bg-white/50';
   const borderColor = isDark ? 'border-slate-700/50' : 'border-gray-300/50';
   const headingColor = isDark ? 'text-yellow-400' : 'text-indigo-600';
