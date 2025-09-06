@@ -1,5 +1,6 @@
 // app/components/Chatbot.tsx
 "use client";
+
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Input } from '@/components/ui/input';
@@ -12,7 +13,7 @@ interface Message {
   text: string;
 }
 
-export function Chatbot({ player }: { player: Player | null }) {
+export function Chatbot({ player, isDark }: { player: Player | null; isDark: boolean }) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -44,8 +45,12 @@ export function Chatbot({ player }: { player: Player | null }) {
     }
   };
 
+  const chatBg = isDark ? 'bg-slate-900 text-white' : 'bg-gray-100 text-gray-900';
+  const userBubbleBg = isDark ? 'bg-blue-600 text-white' : 'bg-blue-200 text-gray-900';
+  const modelBubbleBg = isDark ? 'bg-slate-700 text-white' : 'bg-gray-200 text-gray-900';
+
   return (
-    <div className="flex flex-col font-alkatra h-[500px] bg-black border rounded-lg p-4">
+    <div className={`flex flex-col h-[500px] rounded-lg p-4 ${chatBg}`}>
       <div className="flex-1 overflow-y-auto space-y-4 pr-2">
         <AnimatePresence>
           {messages.map((msg, index) => (
@@ -58,11 +63,15 @@ export function Chatbot({ player }: { player: Player | null }) {
               transition={{ duration: 0.3 }}
               className={`flex items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}
             >
-              {msg.role === 'model' && <Bot className="h-6 w-6 text-primary" />}
-              <div className={`rounded-lg px-4 py-2 ${msg.role === 'user' ? 'text-primary-foreground' : 'bg-black'}`}>
+              {msg.role === 'model' && <Bot className="h-6 w-6 text-gray-300" />}
+              <div
+                className={`rounded-lg px-4 py-2 max-w-[70%] break-words ${
+                  msg.role === 'user' ? userBubbleBg : modelBubbleBg
+                }`}
+              >
                 {msg.text}
               </div>
-              {msg.role === 'user' && <User className="h-6 w-6 text-muted-foreground" />}
+              {msg.role === 'user' && <User className="h-6 w-6 text-blue-500" />}
             </motion.div>
           ))}
         </AnimatePresence>
@@ -73,6 +82,7 @@ export function Chatbot({ player }: { player: Player | null }) {
           onChange={(e) => setInput(e.target.value)}
           placeholder={player ? `Ask about ${player.name}...` : 'Select a player first'}
           disabled={!player || isLoading}
+          className={isDark ? 'bg-slate-800 text-white placeholder-gray-400' : 'bg-white text-gray-900 placeholder-gray-500'}
         />
         <Button type="submit" disabled={!player || isLoading}>
           {isLoading ? '...' : <Send className="h-4 w-4" />}
