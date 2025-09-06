@@ -28,15 +28,14 @@ const CricketDashboard = () => {
     setSelectedPlayer(foundPlayer);
   };
 
-  // Dynamic card bg color depending on dark/light mode
   const cardBg = isDark ? 'bg-slate-800 text-white' : 'bg-white text-gray-900';
   const cardShadow = isDark ? 'shadow-md shadow-black/50' : 'shadow-md shadow-gray-300';
 
   return (
     <div
       className={`flex h-screen font-alegreya overflow-hidden relative ${isDark
-          ? 'bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white'
-          : 'bg-gradient-to-br from-gray-100 via-white to-gray-200 text-gray-900'
+        ? 'bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white'
+        : 'bg-gradient-to-br from-gray-100 via-white to-gray-200 text-gray-900'
         }`}
     >
       <AnimatedBackground />
@@ -54,7 +53,6 @@ const CricketDashboard = () => {
         <div className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            {/* Row 1 */}
             <div className={`p-4 rounded-xl ${cardBg} ${cardShadow}`}>
               <PlayerProfile selectedPlayer={selectedPlayer} isDark={isDark} />
             </div>
@@ -67,7 +65,7 @@ const CricketDashboard = () => {
               <BattingFormChart isDark={isDark} />
             </div>
 
-            {/* Row 2 */}
+
             <div className={`p-4 rounded-xl ${cardBg} ${cardShadow}`}>
               <SkillsRadarChart isDark={isDark} />
             </div>
@@ -84,7 +82,6 @@ const CricketDashboard = () => {
               />
             </div>
 
-            {/* Row 3 */}
             <div className={`p-4 rounded-xl ${cardBg} ${cardShadow}`}>
               <VenuePerformanceChart isDark={isDark} />
             </div>
@@ -99,8 +96,6 @@ const CricketDashboard = () => {
           </div>
         </div>
       </div>
-
-      {/* Floating Chat Button */}
       {!isChatOpen && (
         <button
           onClick={() => setIsChatOpen(true)}
@@ -110,7 +105,6 @@ const CricketDashboard = () => {
         </button>
       )}
 
-      {/* Chat Panel */}
       {isChatOpen && (
         <div
           className={`fixed top-0 right-0 h-full w-[400px] rounded-l-xl shadow-xl flex flex-col ${isDark ? 'bg-slate-800 border-l border-slate-700' : 'bg-white border-l border-gray-300'

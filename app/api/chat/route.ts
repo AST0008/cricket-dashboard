@@ -1,4 +1,4 @@
-// app/api/chat/route.ts
+
 import { NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
