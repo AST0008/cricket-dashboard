@@ -2,6 +2,11 @@
 
 https://cricket-dashboard-two.vercel.app/
 
+## Preview
+
+![Dashboard Preview](./ss.png)
+![Analytics View](./ss2.png)
+
 ## Description
 
 A modern and responsive frontend dashboard designed to display cricket analytics. This project leverages the power of Next.js to create a fast and interactive user experience. It integrates with the Gemini chatbot for enhanced insights and features a dark mode toggle for user preference.
