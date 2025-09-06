@@ -1,4 +1,4 @@
-// lib/data.ts
+
 export type Player = {
     id: number;
     name: string;
